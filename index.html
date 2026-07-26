@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOT — Never Lose What Matters</title>
+  <meta name="description" content="An immersive interactive showcase of LOT (Location Tracker), a revolutionary mechanical unfolding smart location tracker.">
+  
+  <!-- Preload Critical Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+
+  <!-- Preloader Screen -->
+  <div class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-logo">LOT</div>
+      <div class="preloader-bar">
+        <div class="preloader-bar-fill"></div>
+      </div>
+      <div class="preloader-percentage">0%</div>
+      <div class="preloader-status">Preloading Product Sequence...</div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" id="nav-logo">LOT</a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Overview</a></li>
+        <li><a href="#problem" class="nav-link">Challenge</a></li>
+        <li><a href="#works" class="nav-link">How It Works</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#tamper" class="nav-link">Tamper Security</a></li>
+        <li><a href="#live-tracking" class="nav-link">Live Map</a></li>
+        <li><a href="#specs" class="nav-link">Specs</a></li>
+      </ul>
+      <a href="#price" class="nav-btn" id="nav-cta">Pre-Order</a>
+    </div>
+  </nav>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
+  <!-- SECTION 1 & 2: HERO & SCROLL SEQUENCE -->
+  <section class="sequence-container" id="hero">
+    <div class="pinned-canvas-wrapper">
+      
+      <!-- Left Side Panel: Written Matter (hidden initially, reveals at scroll end) -->
+      <div class="reveal-info-panel" id="reveal-info-panel">
+        <span class="eyebrow">Introducing LOT</span>
+        <h2 class="reveal-title">Never Lose What Matters.</h2>
+        <p class="reveal-subtitle">An intelligent expandable tracker built to protect the things that matter most.</p>
+        <div class="reveal-actions">
+          <a href="#problem" class="btn btn-primary">Explore Details</a>
+          <span class="btn btn-secondary">Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Right Side Canvas Container -->
+      <div class="canvas-container-outer" id="canvas-container-outer">
+        <canvas id="sequence-canvas"></canvas>
+        
+        <!-- Hotspots Overlay (Fades in when frame 121 is reached) -->
+        <div class="hotspots-overlay" id="hotspots-overlay">
+          <!-- Hotspot 1: Outer Shell -->
+          <div class="hotspot" style="top: 25%; left: 35%;" data-index="0">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Outer Shell</div>
+          </div>
+          <!-- Hotspot 2: Protective Housing -->
+          <div class="hotspot" style="top: 38%; left: 32%;" data-index="1">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Protective Housing</div>
+          </div>
+          <!-- Hotspot 3: Main PCB -->
+          <div class="hotspot" style="top: 45%; left: 40%;" data-index="2">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Main PCB</div>
+          </div>
+          <!-- Hotspot 4: Battery -->
+          <div class="hotspot" style="top: 55%; left: 38%;" data-index="3">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Battery</div>
+          </div>
+          <!-- Hotspot 5: NFC Module -->
+          <div class="hotspot" style="top: 68%; left: 42%;" data-index="4">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">NFC Module</div>
+          </div>
+          <!-- Hotspot 6: Tracking Module -->
+          <div class="hotspot" style="top: 30%; left: 62%;" data-index="5">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Tracking Module</div>
+          </div>
+          <!-- Hotspot 7: Tamper Detection Sensor -->
+          <div class="hotspot" style="top: 42%; left: 65%;" data-index="6">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Tamper Sensor</div>
+          </div>
+          <!-- Hotspot 8: Expandable Structure -->
+          <div class="hotspot" style="top: 52%; left: 60%;" data-index="7">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Expandable Frame</div>
+          </div>
+          <!-- Hotspot 9: Controller Chip -->
+          <div class="hotspot" style="top: 62%; left: 58%;" data-index="8">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Controller Chip</div>
+          </div>
+          <!-- Hotspot 10: Power Management -->
+          <div class="hotspot" style="top: 48%; left: 50%;" data-index="9">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Power Core</div>
+          </div>
+          <!-- Hotspot 11: Mounting System -->
+          <div class="hotspot" style="top: 75%; left: 50%;" data-index="10">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">Mounting Rig</div>
+          </div>
+          <!-- Hotspot 12: Indicator LEDs -->
+          <div class="hotspot" style="top: 22%; left: 50%;" data-index="11">
+            <div class="hotspot-pulse"></div>
+            <div class="hotspot-label">LED Ring</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hotspot Content Cards Container -->
+      <div class="hotspot-card-container" id="hotspot-card-container">
+        <div class="hotspot-card" id="hotspot-card">
+          <button class="hotspot-card-close" id="hotspot-card-close">&times;</button>
+          <h3 class="hotspot-card-title">Outer Shell</h3>
+          <div class="hotspot-card-row">
+            <span class="hotspot-card-label">Purpose</span>
+            <span class="hotspot-card-val" id="hs-purpose">Defends inner mechanics from drops and environmental dust.</span>
+          </div>
+          <div class="hotspot-card-row">
+            <span class="hotspot-card-label">Technology</span>
+            <span class="hotspot-card-val" id="hs-tech">High-tensile anodized aerospace aluminum.</span>
+          </div>
+          <div class="hotspot-card-row">
+            <span class="hotspot-card-label">Benefit</span>
+            <span class="hotspot-card-val" id="hs-benefit">Ultra-durable casing with minimal weight signature.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Content (Overlay) -->
+      <div class="hero-overlay" id="hero-overlay"></div>
+    </div>
+  </section>
+
+  <!-- Product info that appears below the pinned canvas after reveal -->
+  <div class="product-info-below" id="product-info-below" aria-hidden="true">
+    <div class="product-info-card">
+      <span class="eyebrow">Introducing LOT</span>
+      <h2 class="product-info-title">Never Lose What Matters.</h2>
+      <p class="product-info-subtitle">An intelligent expandable tracker built to protect the things that matter most.</p>
+      <div class="reveal-actions">
+        <a href="#problem" class="btn btn-primary">Explore Details</a>
+        <span class="btn btn-secondary">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+  <!-- SECTION 4: THE PROBLEM -->
+  <!-- NEW SECTION: BREAKDOWN (Visible after final frame) -->
+  <section class="breakdown-section" id="breakdown">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Outer Shell</span>
+        <h2>Introducing LOT — Anatomy</h2>
+      </div>
+
+      <div class="breakdown-list">
+        <div class="breakdown-item">
+          <h4>Outer Shell</h4>
+          <p>Defends inner mechanics from drops and environmental dust.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Protective Housing</h4>
+          <p>Sealed vault shielding circuits from liquids and shock.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Main PCB</h4>
+          <p>Coordinates communications, sensor telemetry, and power routing.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Battery</h4>
+          <p>High-capacity CR2032 for long life and easy replacement.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>NFC Module</h4>
+          <p>Instant owner verification and zero-app pairing.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Tracking Module</h4>
+          <p>Combined BLE & UWB transceiver for precision location beacons.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Tamper Sensor</h4>
+          <p>Optical and micro-switch monitoring for unauthorized access.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Expandable Frame</h4>
+          <p>Spring-loaded links that expand to latch onto straps when deployed.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Controller Chip</h4>
+          <p>Secure ARM core with hardware enclave for encrypted firmware tasks.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Power Core</h4>
+          <p>Power management IC for deep sleep and long standby.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>Mounting Rig</h4>
+          <p>Carabiner-compatible mount with lock-ring for secure attachment.</p>
+        </div>
+        <div class="breakdown-item">
+          <h4>LED Ring</h4>
+          <p>Visual status ring for locate and diagnostic feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: THE PROBLEM -->
+  <section class="problem-section" id="problem">
+    <div class="section-container">
+      <div class="problem-intro">
+        <span class="eyebrow">The Challenge</span>
+      </div>
+      <div class="problem-sentences">
+        <p class="problem-line">Millions of valuable belongings are lost every single year.</p>
+        <p class="problem-line">Most tracking solutions are prohibitively expensive.</p>
+        <p class="problem-line">Many are too bulky to fit cleanly in your pocket.</p>
+        <p class="problem-line">Some require constant, frustrating battery maintenance.</p>
+        <p class="problem-line">Others fail completely when you need them the absolute most.</p>
+        <p class="problem-line highlight">LOT was designed from the ground up to solve these problems.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: HOW LOT WORKS -->
+  <section class="works-section" id="works">
+    <div class="works-pinned-wrapper">
+      <div class="works-header">
+        <span class="eyebrow">The Process</span>
+        <h2>Tracking made effortless.</h2>
+      </div>
+      <div class="timeline-container">
+        <div class="timeline-progress-line">
+          <div class="timeline-progress-fill"></div>
+        </div>
+        
+        <div class="timeline-steps">
+          <!-- Step 1 -->
+          <div class="timeline-step" id="step-1">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Attach LOT</h3>
+            <p class="step-desc">Loop, stick, or slide the compact tracker onto any valuable belonging or bag.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="timeline-step" id="step-2">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Tap using NFC</h3>
+            <p class="step-desc">Bring your smartphone close to LOT for immediate, secure setup without app stores.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="timeline-step" id="step-3">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Track Instantly</h3>
+            <p class="step-desc">Monitor location real-time through decentralized mesh tracking technology.</p>
+          </div>
+          <!-- Step 4 -->
+          <div class="timeline-step" id="step-4">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Receive Alerts</h3>
+            <p class="step-desc">Get instant smart push notifications the moment your item moves or is tampered with.</p>
+          </div>
+          <!-- Step 5 -->
+          <div class="timeline-step" id="step-5">
+            <div class="step-num">05</div>
+            <h3 class="step-title">Recover</h3>
+            <p class="step-desc">Follow the precise direction arrows on screen to recover your belongings stress-free.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: FEATURES -->
+  <section class="features-section" id="features">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Capabilities</span>
+        <h2>Engineered for ultimate peace of mind.</h2>
+      </div>
+      
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">🛰️</div>
+          <h3>Real-Time Tracking</h3>
+          <p>Utilizes advanced multi-constellation signals to keep locations updated globally in real time.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>NFC Pairing</h3>
+          <p>Zero-app pairing system allows secure association using a simple, instant tap.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Tamper Detection</h3>
+          <p>Integrated micro-switches alert you the moment the main protective housing is breached.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">🚨</div>
+          <h3>Unauthorized Opening Alerts</h3>
+          <p>Triggers immediate local beacons and phone alarms if the protected compartment is opened.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <h3>Compact Expandable Design</h3>
+          <p>Unfolds mechanically to adapt to your attachment needs without adding permanent bulk.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">🔋</div>
+          <h3>Long Battery Life</h3>
+          <p>Optimized architecture delivers up to 2 years of continuous battery life before replacement.</p>
+        </div>
+        <!-- Card 7 -->
+        <div class="feature-card">
+          <div class="feature-icon">🍃</div>
+          <h3>Energy Efficient</h3>
+          <p>Powered by Bluetooth Low Energy (BLE 5.3) for minimum power draw and maximum range.</p>
+        </div>
+        <!-- Card 8 -->
+        <div class="feature-card">
+          <div class="feature-icon">☁️</div>
+          <h3>Future Cloud Ready</h3>
+          <p>Fully compatible with encrypted decentralised storage networks for backup security logs.</p>
+        </div>
+        <!-- Card 9 -->
+        <div class="feature-card">
+          <div class="feature-icon">🔑</div>
+          <h3>Secure Device Pairing</h3>
+          <p>End-to-end cryptographic handshakes protect tracking telemetry from prying eyes.</p>
+        </div>
+        <!-- Card 10 -->
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Minimal Maintenance</h3>
+          <p>Modular hardware components designed to be easily swapped with standard home tools.</p>
+        </div>
+        <!-- Card 11 -->
+        <div class="feature-card">
+          <div class="feature-icon">🏷️</div>
+          <h3>Affordable</h3>
+          <p>Unrivalled security infrastructure available at a fraction of standard tracker prices.</p>
+        </div>
+        <!-- Card 12 -->
+        <div class="feature-card">
+          <div class="feature-icon">💎</div>
+          <h3>Reliable</h3>
+          <p>IP67 water and dust resistance ensures tracking stays functional in the harshest storms.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: TAMPER DETECTION -->
+  <section class="tamper-section" id="tamper">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Security Core</span>
+        <h2>Active Shield Tamper Detection</h2>
+        <p>If someone tries to open the protected compartment containing your items, LOT triggers a security response.</p>
+      </div>
+
+      <div class="tamper-dashboard-container">
+        <!-- Left Column: Interactive Simulation Interface -->
+        <div class="tamper-sim-card">
+          <h3>Simulation Control Panel</h3>
+          <p>Manually simulate an unauthorized opening to observe the telemetry dashboard response.</p>
+          <div class="tamper-btn-wrapper">
+            <button class="btn btn-primary" id="btn-tamper-trigger">Trigger Tamper Event</button>
+            <button class="btn btn-secondary" id="btn-tamper-reset">Reset Tracker State</button>
+          </div>
+          <div class="tamper-diagram">
+            <div class="tracker-body-wire">
+              <div class="tracker-lid-wire"></div>
+              <div class="tamper-laser"></div>
+            </div>
+            <div class="tamper-status-light">STATUS: SECURE</div>
+          </div>
+        </div>
+
+        <!-- Right Column: Dashboard UI -->
+        <div class="dashboard-panel">
+          <div class="dashboard-header">
+            <div class="dashboard-title-dot"></div>
+            <span>LOT Secure Portal v4.11</span>
+            <span class="dashboard-live">LIVE FEED</span>
+          </div>
+          <div class="dashboard-stats">
+            <div class="d-stat">
+              <span class="d-stat-label">Tracker ID</span>
+              <span class="d-stat-val">LOT-8829-X</span>
+            </div>
+            <div class="d-stat">
+              <span class="d-stat-label">System Integrity</span>
+              <span class="d-stat-val" id="sys-integrity">100% SECURE</span>
+            </div>
+            <div class="d-stat">
+              <span class="d-stat-label">Alert Status</span>
+              <span class="d-stat-val" id="alert-status">QUIET</span>
+            </div>
+          </div>
+          
+          <div class="dashboard-log-container">
+            <h4>Security Event Log</h4>
+            <ul class="dashboard-logs" id="dashboard-logs">
+              <li class="log-entry log-success"><span class="log-time">[18:05:50]</span> System initialized. Telemetry normal.</li>
+              <li class="log-entry log-success"><span class="log-time">[18:05:51]</span> Encrypted handshake verified. Owner present.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: NFC EXPERIENCE -->
+  <section class="nfc-section" id="nfc">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Connectivity</span>
+        <h2>Magical Touch Pairing</h2>
+        <p>Setup occurs in milliseconds. Hover your phone near LOT to establish an instant secure link.</p>
+      </div>
+
+      <div class="nfc-animation-box">
+        <div class="nfc-scene">
+          <!-- Smartphone SVG Mockup -->
+          <div class="nfc-phone">
+            <div class="phone-screen">
+              <div class="phone-status-bar">
+                <span>5G</span>
+                <span>89%</span>
+              </div>
+              <div class="phone-nfc-card" id="phone-nfc-card">
+                <div class="nfc-card-tick">✓</div>
+                <h4>LOT Tracker Found</h4>
+                <p id="phone-nfc-status">Bring closer to pair...</p>
+                <div class="nfc-progress-mini">
+                  <div class="nfc-progress-mini-bar"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LOT Tracker Mockup -->
+          <div class="nfc-tracker-target">
+            <div class="nfc-tracker-ring"></div>
+            <div class="nfc-tracker-center">LOT</div>
+          </div>
+
+          <!-- Signal Ripples -->
+          <div class="nfc-ripples">
+            <div class="nfc-ripple"></div>
+            <div class="nfc-ripple"></div>
+            <div class="nfc-ripple"></div>
+          </div>
+        </div>
+
+        <div class="nfc-controls">
+          <button class="btn btn-primary" id="btn-simulate-nfc">Simulate NFC Tap</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: LIVE TRACKING -->
+  <section class="live-tracking-section" id="live-tracking">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Real-Time</span>
+        <h2>Precision Tracking Map</h2>
+        <p>Watch LOT move in real time with precise location pins and detailed signal telemetry.</p>
+      </div>
+
+      <div class="map-grid-container">
+        <!-- Interactive Map Visual -->
+        <div class="map-wrapper">
+          <div class="map-canvas-container">
+            <!-- Simulated Vector Map Grid -->
+            <svg class="vector-map-svg" viewBox="0 0 800 500" width="100%" height="100%">
+              <defs>
+                <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                  <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(17, 17, 17, 0.04)" stroke-width="1"/>
+                </pattern>
+              </defs>
+              <!-- Map Background Grid -->
+              <rect width="100%" height="100%" fill="url(#grid-pattern)" />
+              
+              <!-- Map Roads & Parks (Sleek minimalist vectors) -->
+              <path d="M 0,100 L 800,100 M 0,350 L 800,350 M 200,0 L 200,500 M 600,0 L 600,500" fill="none" stroke="rgba(17, 17, 17, 0.08)" stroke-width="32" stroke-linecap="round"/>
+              <path d="M 0,100 L 800,100 M 0,350 L 800,350 M 200,0 L 200,500 M 600,0 L 600,500" fill="none" stroke="#fcfcfc" stroke-width="26" stroke-linecap="round"/>
+              <circle cx="400" cy="225" r="90" fill="rgba(0, 102, 255, 0.03)" stroke="rgba(0, 102, 255, 0.07)" stroke-width="2" />
+              
+              <!-- Route Path -->
+              <path class="map-route-path" d="M 120,350 Q 200,280 400,225 T 600,150" fill="none" stroke="rgba(0, 102, 255, 0.15)" stroke-width="4" stroke-dasharray="8,6" />
+              <path class="map-route-fill-path" id="route-path-moving" d="M 120,350 Q 200,280 400,225 T 600,150" fill="none" stroke="#0066ff" stroke-width="4" stroke-linecap="round" />
+
+              <!-- Location Pin 1 (Home) -->
+              <circle cx="120" cy="350" r="6" fill="#111111" />
+              <text x="120" y="375" text-anchor="middle" font-family="Outfit" font-size="12" font-weight="600" fill="#666666">START POINT</text>
+              
+              <!-- Moving Tracker Pin -->
+              <g class="map-tracker-pin" id="map-tracker-pin">
+                <circle cx="0" cy="0" r="16" class="pin-ripple" fill="rgba(0, 102, 255, 0.25)" />
+                <circle cx="0" cy="0" r="8" fill="#0066ff" stroke="#ffffff" stroke-width="2" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Telemetry Sidebar -->
+        <div class="map-sidebar">
+          <h3>Telemetry Data</h3>
+          <div class="telemetry-rows">
+            <div class="telemetry-row">
+              <span class="telemetry-label">Status</span>
+              <span class="telemetry-val highlight" id="tel-status">ACTIVE BEACON</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Estimated Distance</span>
+              <span class="telemetry-val" id="tel-distance">Calculating...</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Battery Level</span>
+              <span class="telemetry-val">98% (Secure)</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Signal Quality</span>
+              <span class="telemetry-val" id="tel-signal">94 dBm (Excellent)</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="telemetry-label">Last Seen</span>
+              <span class="telemetry-val">Just Now</span>
+            </div>
+          </div>
+          <button class="btn btn-secondary" id="btn-replay-route" style="margin-top: 2rem; width: 100%;">Replay Live Route</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: COMPARISON TABLE -->
+  <section class="comparison-section" id="comparison">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">The Difference</span>
+        <h2>Outperforming the alternatives.</h2>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Features</th>
+              <th class="table-highlight">LOT Tracker</th>
+              <th>Generic Bluetooth Tracker</th>
+              <th>Premium GPS Tag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-name">Price</td>
+              <td class="table-highlight text-primary font-bold">$19.99</td>
+              <td>$29.00 - $39.00</td>
+              <td>$99.00+ + Subscription</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Expandable Casing</td>
+              <td class="table-highlight text-primary font-bold">Yes (Mechanical Unfold)</td>
+              <td>No (Fixed Casing)</td>
+              <td>No (Fixed Casing)</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Tamper Detection</td>
+              <td class="table-highlight text-primary font-bold">Active Optical / Laser</td>
+              <td>None</td>
+              <td>Basic Geofence Only</td>
+            </tr>
+            <tr>
+              <td class="feature-name">NFC Pairing</td>
+              <td class="table-highlight text-primary font-bold">Instant (No-App setup)</td>
+              <td>Requires App download</td>
+              <td>Requires Setup + Cellular</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Ease of Use</td>
+              <td class="table-highlight text-primary font-bold">1-Tap Verify</td>
+              <td>Complex Config</td>
+              <td>Cellular registration</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Battery Life</td>
+              <td class="table-highlight text-primary font-bold">Up to 2 Years (Standby)</td>
+              <td>1 Year (Non-replaceable)</td>
+              <td>3-4 Months (Rechargeable)</td>
+            </tr>
+            <tr>
+              <td class="feature-name">Portability</td>
+              <td class="table-highlight text-primary font-bold">Ultra-Thin (Collapsible)</td>
+              <td>Bulky Round Shape</td>
+              <td>Heavy Pocket weight</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11: PRICE -->
+  <section class="price-section" id="price">
+    <div class="section-container">
+      <div class="price-box">
+        <span class="eyebrow">Pricing</span>
+        <div class="price-amount">$19.99</div>
+        <p class="price-tagline">Premium protection without premium pricing.</p>
+        <div class="price-badge">No monthly fees. No hidden subscriptions.</div>
+        <a href="#cta" class="btn btn-primary" style="margin-top: 2rem;">Pre-Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 12: SPECIFICATIONS -->
+  <section class="specs-section" id="specs">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Details</span>
+        <h2>Technical Specifications</h2>
+      </div>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <span class="spec-label">Weight</span>
+          <span class="spec-value">12.4 grams</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Material</span>
+          <span class="spec-value">Anodized Space Aluminum & PC-ABS</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Dimensions</span>
+          <span class="spec-value">32mm x 32mm x 4.5mm (Closed)</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Battery Cell</span>
+          <span class="spec-value">Replaceable CR2032 Lithium Coin</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Connectivity</span>
+          <span class="spec-value">BLE 5.3 & Ultra-Wideband (UWB)</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Tracking Range</span>
+          <span class="spec-value">Global Mesh Network & 120m direct line</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">NFC Frequency</span>
+          <span class="spec-value">13.56 MHz (HF standard)</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Water Resistance</span>
+          <span class="spec-value">IP67 standard (up to 1m for 30 mins)</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Operating Temp</span>
+          <span class="spec-value">-20°C to 60°C (-4°F to 140°F)</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Compatibility</span>
+          <span class="spec-value">iOS 15+, Android 10+ & Web Portal</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Expected Lifetime</span>
+          <span class="spec-value">5+ years hardware durability</span>
+        </div>
+        <div class="spec-card">
+          <span class="spec-label">Security Protocol</span>
+          <span class="spec-value">AES-256 telemetry encryption</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 13: FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="eyebrow">Support</span>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-accordion-container">
+        <!-- Question 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the mechanical unfolding design benefit me?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The mechanical unfolding mechanism allows LOT to keep an ultra-compact profile when stored in flat pockets, but expand into a structural shape that hooks onto straps, buckles, or luggage rings when deployment is required.
+            </div>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is there a monthly subscription fee for global tracking?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              No. LOT operates on decentralised standard Bluetooth and mesh network protocols. There are zero subscriptions, monthly fees, or registration costs for life.
+            </div>
+          </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How does the Active Shield Tamper Detection work?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              LOT features a laser-etched alignment contact circuit. If the casing is breached or separated without owner approval (verified via NFC/biometrics on your phone), the tracker immediately triggers its internal beacon and sends an emergency alarm to your paired device.
+            </div>
+          </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does the battery last, and can I replace it?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              LOT uses a standard CR2032 coin battery that lasts up to 2 years due to high-efficiency firmware. It can be easily replaced by unfolding the chassis and unscrewing the central battery cap.
+            </div>
+          </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Is my location data private and secure?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. LOT location telemetry is end-to-end encrypted with public-private key cryptography. Only your verified device holds the key to decrypt and read the coordinate logs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 14: FINAL CTA -->
+  <section class="cta-section" id="cta">
+    <!-- Floating Outlines Background -->
+    <div class="cta-floating-bg">
+      <div class="floating-outline-shape shape-1"></div>
+      <div class="floating-outline-shape shape-2"></div>
+      <div class="floating-outline-shape shape-3"></div>
+    </div>
+
+    <div class="section-container">
+      <div class="cta-content">
+        <h2 class="cta-title">Protect What Matters.</h2>
+        <p class="cta-subtitle">Small enough to carry. Smart enough to protect.</p>
+        <div class="cta-buttons">
+          <a href="#price" class="btn btn-primary">Pre-Order Now</a>
+          <span class="btn btn-secondary">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">LOT</span>
+          <p>Next-generation tactile tracking mechanics. Engineered with pride.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Product</h4>
+          <a href="#hero">Overview</a>
+          <a href="#breakdown">Anatomy</a>
+          <a href="#features">Features</a>
+          <a href="#price">Purchase</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Security</h4>
+          <a href="#tamper">Tamper System</a>
+          <a href="#live-tracking">Mesh Tracking</a>
+          <a href="#specs">Specifications</a>
+        </div>
+        <div class="footer-links-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Regulatory Info</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LOT Inc. All rights reserved. Designed to Wow.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include GSAP, ScrollTrigger, and Lenis -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  
+  <!-- Main Script -->
+  <script src="app.js"></script>
+</body>
+</html>
